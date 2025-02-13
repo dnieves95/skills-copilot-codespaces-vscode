@@ -1,15 +1,39 @@
 function skillMember() {
     return {
-        name: 'member',
-        description: 'Get the list of members of a group or a channel.',
+        name: "member",
+        description: "Member commands",
         options: [
             {
-                name: 'group_id',
-                description: 'The group or channel ID.',
-                type: 3,
-                required: true,
+                name: "add",
+                description: "Add a member to the group",
+                type: 1,
+                options: [
+                    {
+                        name: "user",
+                        description: "The user to add to the group",
+                        type: 6,
+                        required: true
+                    }
+                ]
             },
-        ],
-        type: 1,
+            {
+                name: "remove",
+                description: "Remove a member from the group",
+                type: 1,
+                options: [
+                    {
+                        name: "user",
+                        description: "The user to remove from the group",
+                        type: 6,
+                        required: true
+                    }
+                ]
+            },
+            {
+                name: "list",
+                description: "List all members of the group",
+                type: 1
+            }
+        ]
     };
 }
